@@ -24,7 +24,6 @@ class _NewsApiService implements NewsApiService {
       r'country': country,
       r'category': category
     };
-    print(queryParameters);
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};

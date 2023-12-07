@@ -4,9 +4,11 @@ import 'package:clean_news_app/features/news/presentation/bloc/article/remote/re
 import 'package:clean_news_app/features/news/presentation/pages/home/daily_news.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'config/routes/routes.dart';
 import 'injection_container.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();
   runApp(const MyApp());
 }
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
             title: 'News app',
             debugShowCheckedModeBanner: false,
+            onGenerateRoute: AppRoutes.onGenerateRoutes,
             theme: theme(),
             home: const DailyNews())
     );
